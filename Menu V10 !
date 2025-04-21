@@ -583,7 +583,7 @@ local mob = rev:CreateButton({
    Callback = function()
    local TextChatService = game:GetService("TextChatService")
 
--- Função para enviar a mensagem /revistar morto
+-- Função para enviar a mensagem /revistar
 local function sendRevistarMessage()
     local channel = TextChatService:WaitForChild("TextChannels"):WaitForChild("RBXGeneral")
     channel:SendAsync("/revistar")
@@ -633,7 +633,7 @@ end)
 RevistarButton.Size = UDim2.new(0.8, 0, 0.4, 0)
 RevistarButton.Position = UDim2.new(0.1, 0, 0.5, -30)
 RevistarButton.BackgroundColor3 = Color3.fromRGB(50, 150, 250)
-RevistarButton.Text = "manda /revistar morto"
+RevistarButton.Text = "manda /revistar"
 RevistarButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 RevistarButton.Font = Enum.Font.SourceSansBold
 RevistarButton.TextSize = 20
@@ -874,7 +874,7 @@ getgenv().Enabled = getgenv().Enabled or false -- Estado inicial: desativado
 local function sendRevistarMessage()
     local TextChatService = game:GetService("TextChatService")
     local channel = TextChatService:WaitForChild("TextChannels"):WaitForChild("RBXGeneral")
-    channel:SendAsync("/revistar morto")
+    channel:SendAsync("/revistar")
 end
 
 -- Listener para detectar teclas pressionadas
