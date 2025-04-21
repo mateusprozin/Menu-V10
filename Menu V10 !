@@ -586,7 +586,7 @@ local mob = rev:CreateButton({
 -- Função para enviar a mensagem /revistar morto
 local function sendRevistarMessage()
     local channel = TextChatService:WaitForChild("TextChannels"):WaitForChild("RBXGeneral")
-    channel:SendAsync("/revistar morto")
+    channel:SendAsync("/revistar")
 end
 
 -- Cria a interface
