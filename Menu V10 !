@@ -23,9 +23,9 @@ if not getgenv().Aimbot then
 end
 
 local Window = Rayfield:CreateWindow({
-    Name = "Mini bomba menu",
-    LoadingTitle = "Mini Hub menu",
-    LoadingSubtitle = "Feito por Mateus",
+    Name = "Menu Mini City Destroyer Cracked",
+    LoadingTitle = "MMD Cracked",
+    LoadingSubtitle = "Cracked",
     ConfigurationSaving = {
         Enabled = true,
         FolderName = "AimbotConfig",
@@ -130,14 +130,6 @@ Tab:CreateButton({
         })
     end,
 })
-
-local Button = Tab:CreateButton({
-        Name = "Aimbot mobile",
-        Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Pedroxz63/PedroxzAIMBOT/main/README.md", true))()
-        end,
-     })
-
 local localPlayer = Players.LocalPlayer
 local teamName = "STAFF" -- Nome do time a ser verificado
 
@@ -544,7 +536,7 @@ local function deletarNotifyGui()
 end
 
 -- Lista de itens para pegar
-local itens = {"AK47", "Uzi", "Parafal", "Faca", "IA2", "G3", "IPhone 14", "Agua", "Hamburguer", "Hi Power", "Natalina"}
+local itens = {"AK47", "Uzi", "Parafal", "Faca", "IA2", "G3", "Hi Power", "Natalina"}
 
 -- Argumentos para a requisição
 local args = {
