@@ -862,6 +862,44 @@ local Slider = otoTab:CreateSlider({
    end,
 })
 
+-- Config inicial
+getgenv().HealthThreshold = 35 -- Valor inicial do slider
+
+    -- Função para teleportar
+    function teleportToSafe()
+        local player = game.Players.LocalPlayer
+        if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            player.Character.HumanoidRootPart.CFrame = CFrame.new(-303, 3, 395)
+        end
+    end
+    
+    -- Criação do Slider na GUI
+    local Slider = otoTab:CreateSlider({
+        Name = "Teleport quando tiver com =",
+        Range = {0, 100},
+        Increment = 1,
+        Suffix = " HP",
+        CurrentValue = getgenv().HealthThreshold,
+        Flag = "HealthThresholdSlider",
+        Callback = function(Value)
+            getgenv().HealthThreshold = Value
+        end,
+    })
+    
+    -- Loop que fica checando sua vida
+    task.spawn(function()
+        while task.wait(0.2) do
+            local player = game.Players.LocalPlayer
+            if player and player.Character and player.Character:FindFirstChild("Humanoid") then
+                local hp = player.Character.Humanoid.Health
+                if hp > 0 and hp <= getgenv().HealthThreshold then
+                    teleportToSafe()
+                end
+            end
+        end
+    end)
+    
+
 getgenv().Key = Enum.KeyCode.E
 getgenv().Enabled = getgenv().Enabled or false
 local UserInputService = game:GetService("UserInputService")
